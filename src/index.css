@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+* {
+  box-sizing: border-box;
+}
+
+@theme {
+  --color-primary: oklch(27.9% 0.041 260.031);
+  --color-primary-hover: oklch(20.8% 0.042 265.755);
+  --color-secondary: oklch(98.4% 0.003 247.858);
+  --color-bg-color: oklch(92.9% 0.013 255.508);
+  --color-bg-color-dark: oklch(37.2% 0.044 257.287);
+}
