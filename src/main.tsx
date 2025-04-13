@@ -4,6 +4,8 @@ import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard from "./pages/dashboard/Dashboard.tsx";
+import Quiz from "./pages/quiz/Quiz.tsx";
+import PeriodicTable from "./pages/periodic-table/PeriodicTable.tsx";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +15,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Dashboard />,
+      },
+      {
+        path: "quiz",
+        element: <Quiz />,
+      },
+      {
+        path: "Periodic-table",
+        element: <PeriodicTable />,
       },
     ],
   },

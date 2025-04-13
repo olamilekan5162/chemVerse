@@ -12,14 +12,14 @@ const Navbar = () => {
 
       <div className="flex flex-row items-center justify-center gap-[60px]">
         <NavLink
-          to="#"
+          to="/"
           className={({ isActive }) =>
             isActive
               ? "border-b-primary dark:border-b-secondary border-b-6 pb-2 text-2xl font-normal"
               : "hover:text-primary-hover dark:hover:text-bg-color text-2xl font-normal"
           }
         >
-          Explore
+          Elements
         </NavLink>
 
         <NavLink
@@ -30,25 +30,25 @@ const Navbar = () => {
               : "hover:text-primary-hover dark:hover:text-bg-color text-2xl font-normal"
           }
         >
-          New Drugs
+          Drugs
         </NavLink>
 
         <NavLink
-          to="element"
+          to="periodic-table"
           className={({ isActive }) =>
             isActive
-              ? "border-b-primary dark:border-b-secondary border-b-6 pb-4 text-2xl font-normal"
+              ? "border-b-primary dark:border-b-secondary border-b-6 pb-2 text-2xl font-normal"
               : "hover:text-primary-hover dark:hover:text-bg-color text-2xl font-normal"
           }
         >
-          Element Table
+          Periodic Table
         </NavLink>
 
         <NavLink
           to="quiz"
           className={({ isActive }) =>
             isActive
-              ? "border-b-primary dark:border-b-secondary border-b-6 pb-4 text-2xl font-normal"
+              ? "border-b-primary dark:border-b-secondary border-b-6 pb-2 text-2xl font-normal"
               : "hover:text-primary-hover dark:hover:text-bg-color text-2xl font-normal"
           }
         >
@@ -59,7 +59,7 @@ const Navbar = () => {
           to="about"
           className={({ isActive }) =>
             isActive
-              ? "border-b-primary dark:border-b-secondary border-b-6 pb-4 text-2xl font-normal"
+              ? "border-b-primary dark:border-b-secondary border-b-6 pb-2 text-2xl font-normal"
               : "hover:text-primary-hover dark:hover:text-bg-color text-2xl font-normal"
           }
         >
