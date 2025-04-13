@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard from "./pages/dashboard/Dashboard.tsx";
 import Quiz from "./pages/quiz/Quiz.tsx";
 import PeriodicTable from "./pages/periodic-table/PeriodicTable.tsx";
+import Drugs from "./pages/drugs/Drugs.tsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "Periodic-table",
         element: <PeriodicTable />,
+      },
+      {
+        path: "drugs",
+        element: <Drugs />,
       },
     ],
   },
