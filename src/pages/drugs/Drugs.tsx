@@ -37,12 +37,12 @@ const Drugs = () => {
     }
   };
 
-  const funFacts = [
-    "Aspirin was originally derived from willow tree bark!",
-    "Caffeine is the most widely consumed psychoactive substance in the world.",
-    "Penicillin was discovered by accident!",
-    "Morphine is named after Morpheus, the Greek god of dreams.",
-  ];
+  //   const funFacts = [
+  //     "Aspirin was originally derived from willow tree bark!",
+  //     "Caffeine is the most widely consumed psychoactive substance in the world.",
+  //     "Penicillin was discovered by accident!",
+  //     "Morphine is named after Morpheus, the Greek god of dreams.",
+  //   ];
 
   return (
     <div className="flex flex-col items-center">
