@@ -1,5 +1,3 @@
-import React from "react";
-
 const About = () => {
   return (
     <div className="bg-secondary dark:bg-primary dark:text-secondary text-primary mt-[100px] flex min-h-screen flex-col items-center justify-center gap-8">
