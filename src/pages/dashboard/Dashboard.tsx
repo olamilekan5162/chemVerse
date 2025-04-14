@@ -62,9 +62,11 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <Hero onSearch={fetchCompoundData} />
+      <Hero onSearch={fetchCompoundData} isDashboard={true} />
       <h1 className="text-primary dark:text-secondary mt-6 max-w-2xl text-center text-[18px]">
-        <i>Do you Know: {myFact} </i>
+        <i>
+          💡 Did you Know? <br /> {myFact}{" "}
+        </i>
       </h1>
 
       <div className="w-[95%] max-w-6xl px-4 py-8">
@@ -135,7 +137,7 @@ const Dashboard = () => {
             by combining science, search, and fun — all in one platform. <br />
             <br />
             <NavLink to="about" className="flex items-center font-bold">
-              Get to Know PubChem Better
+              Get to Know ChemVerse Better
               <MdNavigateNext className="text-3xl" />
             </NavLink>
           </span>
