@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import Hero from "../../components/hero/Hero";
 import { chemistryFacts } from "../../utils/chemistryFacts";
+import { NavLink } from "react-router-dom";
+import { MdNavigateNext } from "react-icons/md";
 
 const Dashboard = () => {
   const [compound, setCompound] = useState(null);
@@ -52,7 +54,7 @@ const Dashboard = () => {
       const random = Math.floor(Math.random() * chemistryFacts.length);
       setTimeout(() => {
         setCurrentFact(random);
-      }, 20000);
+      }, 10000);
       setMyFact(chemistryFacts[currentFact].fact);
     };
     setFact();
@@ -61,7 +63,7 @@ const Dashboard = () => {
   return (
     <div className="flex flex-col items-center">
       <Hero onSearch={fetchCompoundData} />
-      <h1 className="text-primary dark:text-secondary mt-7 max-w-2xl text-center text-[18px]">
+      <h1 className="text-primary dark:text-secondary mt-6 max-w-2xl text-center text-[18px]">
         <i>Do you Know: {myFact} </i>
       </h1>
 
@@ -121,6 +123,23 @@ const Dashboard = () => {
             </div>
           </div>
         )}
+      </div>
+      <div className="bg-secondary text-primary dark:bg-primary dark:text-secondary flex h-fit w-full justify-center py-12">
+        <div className="flex flex-col items-center gap-4">
+          <p className="text-4xl font-bold">Universe of Chemistry</p>
+          <span className="max-w-2xl text-xl">
+            ChemVerse is your all-in-one gateway to exploring the incredible
+            world of chemistry. Whether you're a student, researcher, or curious
+            mind, ChemVerse simplifies complex chemical data into an interactive
+            and intuitive experience. <br /> <br /> We bring chemistry to life
+            by combining science, search, and fun — all in one platform. <br />
+            <br />
+            <NavLink to="about" className="flex items-center font-bold">
+              Get to Know PubChem Better
+              <MdNavigateNext className="text-3xl" />
+            </NavLink>
+          </span>
+        </div>
       </div>
     </div>
   );

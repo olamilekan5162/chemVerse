@@ -4,7 +4,7 @@ import { DarkThemeToggle } from "flowbite-react";
 import logo from "/logo.svg";
 const Navbar = () => {
   return (
-    <div className="bg-secondary text-primary dark:bg-primary dark:text-secondary flex h-[100px] flex-row justify-between px-[40px] py-3">
+    <div className="bg-secondary text-primary dark:bg-primary dark:text-secondary fixed top-0 right-0 left-0 z-50 flex h-[100px] flex-row justify-between px-[40px] py-3">
       <Link to="#" className="flex flex-row items-center justify-center gap-3">
         <img src={logo} alt="logo" className="h-auto w-[50px]" />
         <h1 className="text-5xl font-extrabold">ChemVerse</h1>

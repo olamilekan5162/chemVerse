@@ -1,7 +1,7 @@
 const Drugs = () => {
   return (
     <div>
-      <div></div>
+      <div>Drug Page</div>
     </div>
   );
 };
