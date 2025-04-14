@@ -1,5 +1,4 @@
-// Hero.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 
 const Hero = ({ onSearch }) => {

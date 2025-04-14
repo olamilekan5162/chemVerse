@@ -23,7 +23,7 @@ const PeriodicTable = () => {
         const data = await response.json();
         setElements(data);
       } catch (err) {
-        setError("Failed to fetch periodic table data:", err);
+        setError("Failed to fetch periodic table data:" + err);
       } finally {
         setLoading(false);
       }
@@ -59,7 +59,7 @@ const PeriodicTable = () => {
       {loading && <p className="text-center">Loading elements...</p>}
       {error && <p className="text-center text-red-600">{error}</p>}
 
-      <div className="grid max-w-3xl grid-cols-18 justify-center gap-1">
+      <div className="grid w-7xl grid-cols-18 justify-center gap-1">
         {elements.map((el) => (
           <div
             key={el.atomicNumber}
