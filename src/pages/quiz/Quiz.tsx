@@ -22,7 +22,16 @@ const Quiz = () => {
   };
 
   return (
-    <div className="bg-secondary dark:bg-primary mt-[100px] flex h-screen w-full items-center justify-center p-4">
+    <div className="bg-secondary dark:bg-primary mt-[100px] flex h-screen w-full flex-col items-center justify-center gap-[100px] p-4">
+      <h1 className="text-primary dark:text-secondary max-w-3xl text-[20px]">
+        <i>
+          Embark on a thrilling adventure through the{" "}
+          <strong>Universe of Chemistry with ChemVerse!</strong> From atomic
+          structures to chemical reactions, test your chemistry knowledge,
+          unleash your inner scientist, and unlock the secrets of chemical
+          compounds in real-time!
+        </i>
+      </h1>
       <div className="bg-secondary dark:bg-primary w-full max-w-xl rounded-xl p-10 shadow-xl">
         {current < quizData.length ? (
           <>
@@ -73,8 +82,10 @@ const Quiz = () => {
           </>
         ) : (
           <div className="text-center">
-            <h2 className="text-2xl font-bold">🎉 Quiz Complete!</h2>
-            <p className="mt-2 text-gray-600">
+            <h2 className="text-primary dark:text-secondary text-2xl font-bold">
+              🎉 Quiz Complete!
+            </h2>
+            <p className="text-primary dark:text-secondary mt-2">
               You scored {score} out of {quizData.length}
             </p>
             <button
@@ -84,7 +95,7 @@ const Quiz = () => {
                 setSelected(null);
                 setShowAnswer(false);
               }}
-              className="mt-4 rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700"
+              className="bg-primary text-secondary hover:bg-bg-color-dark dark:bg-secondary dark:hover:bg-bg-color dark:text-primary mt-4 rounded px-4 py-2"
             >
               Retry Quiz
             </button>

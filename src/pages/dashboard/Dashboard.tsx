@@ -1,11 +1,14 @@
 // Dashboard.jsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Hero from "../../components/hero/Hero";
+import { chemistryFacts } from "../../utils/chemistryFacts";
 
 const Dashboard = () => {
   const [compound, setCompound] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [currentFact, setCurrentFact] = useState(0);
+  const [myFact, setMyFact] = useState("");
 
   const fetchCompoundData = async (query) => {
     setLoading(true);
@@ -44,9 +47,23 @@ const Dashboard = () => {
     }
   };
 
+  useEffect(() => {
+    const setFact = () => {
+      const random = Math.floor(Math.random() * chemistryFacts.length);
+      setTimeout(() => {
+        setCurrentFact(random);
+      }, 20000);
+      setMyFact(chemistryFacts[currentFact].fact);
+    };
+    setFact();
+  }, [currentFact]);
+
   return (
     <div className="flex flex-col items-center">
       <Hero onSearch={fetchCompoundData} />
+      <h1 className="text-primary dark:text-secondary mt-7 max-w-2xl text-center text-[18px]">
+        <i>Do you Know: {myFact} </i>
+      </h1>
 
       <div className="w-[95%] max-w-6xl px-4 py-8">
         {loading && (

@@ -7,6 +7,7 @@ import Dashboard from "./pages/dashboard/Dashboard.tsx";
 import Quiz from "./pages/quiz/Quiz.tsx";
 import PeriodicTable from "./pages/periodic-table/PeriodicTable.tsx";
 import Drugs from "./pages/drugs/Drugs.tsx";
+import About from "./pages/about/About.tsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "drugs",
         element: <Drugs />,
+      },
+      {
+        path: "about",
+        element: <About />,
       },
     ],
   },
