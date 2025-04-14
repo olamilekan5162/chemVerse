@@ -1,34 +1,109 @@
+// Dashboard.jsx
+import { useState } from "react";
 import Hero from "../../components/hero/Hero";
-// import { Spinner } from "flowbite-react";
 
 const Dashboard = () => {
+  const [compound, setCompound] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const fetchCompoundData = async (query) => {
+    setLoading(true);
+    setCompound(null);
+    setError("");
+
+    try {
+      const res = await fetch(
+        `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${query}/JSON`,
+      );
+      if (!res.ok) throw new Error("Compound not found");
+
+      const data = await res.json();
+      const compoundInfo = data?.PC_Compounds?.[0];
+      const id = compoundInfo?.id?.id?.cid;
+
+      const getProp = (label) =>
+        compoundInfo?.props?.find((prop) => prop.urn.label === label)?.value;
+
+      setCompound({
+        name: query,
+        id,
+        iupac: getProp("IUPAC Name")?.sval,
+        formula: getProp("Molecular Formula")?.sval,
+        weight: getProp("Molecular Weight")?.fval,
+        mass: getProp("Exact Mass")?.fval,
+        boiling: getProp("Boiling Point")?.fval,
+        melting: getProp("Melting Point")?.fval,
+        logP: getProp("XLogP")?.fval,
+        imageUrl: `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${query}/PNG`,
+      });
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className="flex flex-col">
-      <Hero />
-      <div className="bg-secondary dark:bg-primary dark:text-secondary text-primary mx-auto mt-[20px] flex h-fit w-[95%] flex-row p-6">
-        <div className="flex h-full w-full flex-1/2 items-center">
-          <div className="mx-auto flex flex-col items-center gap-7">
-            <p className="text-2xl font-medium">
-              IUPAC Name: <span className="text-xl font-normal">O2</span>
-            </p>
-            <p className="text-2xl font-medium">
-              Compound Name: <span className="text-xl font-normal">Oxygen</span>
-            </p>
-            <p className="text-2xl font-medium">
-              Molecular Mass: <span className="text-xl font-normal">16</span>
-            </p>
-            <p className="text-2xl font-medium">
-              Atomic Mass: <span className="font-nonrmal text-xl">8</span>
-            </p>
+    <div className="flex flex-col items-center">
+      <Hero onSearch={fetchCompoundData} />
+
+      <div className="w-[95%] max-w-6xl px-4 py-8">
+        {loading && (
+          <div className="text-primary dark:text-secondary animate-pulse text-center text-xl">
+            Searching for compound...
           </div>
-        </div>
-        <div className="flex flex-1/2">
-          <img
-            src="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/Fluorine/png"
-            alt="glucose"
-            className="h-auto w-[300px] rounded-full"
-          />
-        </div>
+        )}
+
+        {error && (
+          <div className="text-center font-medium text-red-500">{error}</div>
+        )}
+
+        {compound && (
+          <div className="dark:bg-primary text-primary dark:text-secondary flex flex-col items-center gap-10 rounded-xl bg-white p-8 shadow-xl transition-all duration-300 hover:scale-[1.01] md:flex-row">
+            <div className="flex flex-1 flex-col gap-4">
+              <h2 className="text-3xl font-bold capitalize">{compound.name}</h2>
+              <p>
+                <strong>IUPAC Name:</strong> {compound.iupac || "N/A"}
+              </p>
+              <p>
+                <strong>Molecular Formula:</strong> {compound.formula || "N/A"}
+              </p>
+              <p>
+                <strong>Molecular Weight:</strong> {compound.weight || "N/A"}{" "}
+                g/mol
+              </p>
+              <p>
+                <strong>Exact Mass:</strong> {compound.mass || "N/A"}
+              </p>
+              <p>
+                <strong>Boiling Point:</strong> {compound.boiling || "N/A"}°C
+              </p>
+              <p>
+                <strong>Melting Point:</strong> {compound.melting || "N/A"}°C
+              </p>
+              <p>
+                <strong>LogP:</strong> {compound.logP || "N/A"}
+              </p>
+              <a
+                href={`https://pubchem.ncbi.nlm.nih.gov/compound/${compound.id}`}
+                target="_blank"
+                rel="noreferrer"
+                className="bg-primary dark:bg-secondary dark:text-primary mt-4 inline-block w-fit rounded px-4 py-2 text-white hover:opacity-80"
+              >
+                View Full PubChem Record ↗
+              </a>
+            </div>
+
+            <div className="flex flex-1 justify-center">
+              <img
+                src={compound.imageUrl}
+                alt={compound.name}
+                className="border-primary dark:border-secondary h-[250px] w-[250px] rounded-full border-4 object-contain shadow-lg"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

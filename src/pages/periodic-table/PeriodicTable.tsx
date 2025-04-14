@@ -52,14 +52,14 @@ const PeriodicTable = () => {
   };
 
   return (
-    <div className="bg-secondary dark:bg-primary text-primary relative mt-[100px] min-h-screen p-6">
-      <h1 className="dark:text-secondary my-16 text-center text-3xl font-bold">
+    <div className="bg-secondary dark:bg-primary text-primary relative mt-[100px] flex min-h-screen flex-col items-center justify-center gap-8 p-6">
+      <h1 className="dark:text-secondary text-center text-3xl font-bold">
         🧪 The Periodic Table
       </h1>
       {loading && <p className="text-center">Loading elements...</p>}
       {error && <p className="text-center text-red-600">{error}</p>}
 
-      <div className="mx-auto grid max-w-7xl grid-cols-18 justify-center gap-1">
+      <div className="grid max-w-3xl grid-cols-18 justify-center gap-1">
         {elements.map((el) => (
           <div
             key={el.atomicNumber}

@@ -1,13 +1,16 @@
+// Hero.jsx
 import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 
-const Hero = () => {
+const Hero = ({ onSearch }) => {
   const [search, setSearch] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(search);
-    setSearch("");
+    if (search.trim()) {
+      onSearch(search.trim());
+      setSearch("");
+    }
   };
 
   return (
@@ -21,14 +24,13 @@ const Hero = () => {
           and molecular structures —
         </span>
         <form
-          action="/"
-          className="border-primary dark:border-secondary flex w-[60%] flex-row items-center justify-between gap-3 rounded border-2 px-3 py-1"
           onSubmit={handleSearch}
+          className="border-primary dark:border-secondary flex w-[60%] flex-row items-center justify-between gap-3 rounded border-2 px-3 py-1"
         >
           <input
-            className="w-full border-none outline-none"
+            className="w-full border-none bg-transparent outline-none"
             type="text"
-            placeholder="search for elements, drugs..."
+            placeholder="Search for elements, drugs..."
             required
             value={search}
             onChange={(e) => setSearch(e.target.value)}
