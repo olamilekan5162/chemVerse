@@ -11,7 +11,7 @@ const Drugs = () => {
     setLoading(true);
     setDrugLabel(null);
     setDrugNdc(null);
-    setError(null);
+    setError("");
 
     try {
       const [labelResponse, ndcResponse] = await Promise.all([
@@ -24,24 +24,21 @@ const Drugs = () => {
       ]);
 
       if (!labelResponse.ok) {
-        throw new Error(`Label API error: ${labelResponse.status}`);
+        throw new Error("Drug not found");
       }
 
       if (!ndcResponse.ok) {
-        throw new Error(`NDC API error: ${ndcResponse.status}`);
+        throw new Error("Drug not found");
       }
 
       const labelData = await labelResponse.json();
       const ndcData = await ndcResponse.json();
 
-      console.log(labelData.results);
-      console.log(ndcData.results);
-
       setDrugLabel(labelData.results[0]);
       setDrugNdc(ndcData.results[0]);
     } catch (err) {
       console.error("Error fetching drug data:", err);
-      setError("Drug not found");
+      setError(err.message);
     } finally {
       setLoading(false);
     }

@@ -7,6 +7,7 @@ import { MdNavigateNext } from "react-icons/md";
 
 const Dashboard = () => {
   const [compound, setCompound] = useState(null);
+  const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [currentFact, setCurrentFact] = useState(0);
@@ -16,32 +17,30 @@ const Dashboard = () => {
     setLoading(true);
     setCompound(null);
     setError("");
+    const pubChemCompound = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${query}/property/MolecularFormula,MolecularWeight,InChI,Title,SMILES,IUPACName,Charge,HBondAcceptorCount,HBondDonorCount/JSON`;
+    const pubChemDescription = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${query}/description/JSON`;
 
     try {
-      const res = await fetch(
-        `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${query}/JSON`,
+      const [compoundRes, descriptionRes] = await Promise.all([
+        fetch(pubChemCompound),
+        fetch(pubChemDescription),
+      ]);
+
+      if (!compoundRes.ok) {
+        throw new Error("Drug not found");
+      }
+
+      if (!descriptionRes.ok) {
+        throw new Error("Drug not found");
+      }
+
+      const compoundData = await compoundRes.json();
+      const descriptionData = await descriptionRes.json();
+
+      setCompound(compoundData.PropertyTable.Properties[0]);
+      setDescription(
+        descriptionData.InformationList.Information[1].Description,
       );
-      if (!res.ok) throw new Error("Compound not found");
-
-      const data = await res.json();
-      const compoundInfo = data?.PC_Compounds?.[0];
-      const id = compoundInfo?.id?.id?.cid;
-
-      const getProp = (label) =>
-        compoundInfo?.props?.find((prop) => prop.urn.label === label)?.value;
-
-      setCompound({
-        name: query,
-        id,
-        iupac: getProp("IUPAC Name")?.sval,
-        formula: getProp("Molecular Formula")?.sval,
-        weight: getProp("Molecular Weight")?.fval,
-        mass: getProp("Exact Mass")?.fval,
-        boiling: getProp("Boiling Point")?.fval,
-        melting: getProp("Melting Point")?.fval,
-        logP: getProp("XLogP")?.fval,
-        imageUrl: `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${query}/PNG`,
-      });
     } catch (err) {
       setError(err.message);
     } finally {
@@ -85,26 +84,35 @@ const Dashboard = () => {
             <div className="flex flex-1 flex-col gap-4">
               <h2 className="text-3xl font-bold capitalize">{compound.name}</h2>
               <p>
-                <strong>IUPAC Name:</strong> {compound.iupac || "N/A"}
+                <strong>IUPAC Name:</strong> {compound.IUPACName || "N/A"}
               </p>
               <p>
-                <strong>Molecular Formula:</strong> {compound.formula || "N/A"}
+                <strong>Molecular Formula:</strong>{" "}
+                {compound.MolecularFormula || "N/A"}
               </p>
               <p>
-                <strong>Molecular Weight:</strong> {compound.weight || "N/A"}{" "}
-                g/mol
+                <strong>Molecular Weight:</strong>{" "}
+                {compound.MolecularWeight || "N/A"} g/mol
               </p>
               <p>
-                <strong>Exact Mass:</strong> {compound.mass || "N/A"}
+                <strong>Smile:</strong> {compound.SMILES || "N/A"}
               </p>
               <p>
-                <strong>Boiling Point:</strong> {compound.boiling || "N/A"}°C
+                <strong>InChi:</strong> {compound.InChI || "N/A"}
               </p>
               <p>
-                <strong>Melting Point:</strong> {compound.melting || "N/A"}°C
+                <strong>Charge:</strong> {compound.Charge || "N/A"}
               </p>
               <p>
-                <strong>LogP:</strong> {compound.logP || "N/A"}
+                <strong>Hydrogen Bond Acceptor:</strong>{" "}
+                {compound.HBondAcceptorCount || "N/A"}
+              </p>
+              <p>
+                <strong>Hydrogen Bond Donor:</strong>{" "}
+                {compound.HBondDonorCount || "N/A"}
+              </p>
+              <p>
+                <strong>Description:</strong> {description || "N/A"}
               </p>
               <a
                 href={`https://pubchem.ncbi.nlm.nih.gov/compound/${compound.id}`}
@@ -118,7 +126,7 @@ const Dashboard = () => {
 
             <div className="flex flex-1 justify-center">
               <img
-                src={compound.imageUrl}
+                src={`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${compound.Title}/PNG`}
                 alt={compound.name}
                 className="border-primary dark:border-secondary h-[250px] w-[250px] rounded-full border-4 object-contain shadow-lg"
               />
