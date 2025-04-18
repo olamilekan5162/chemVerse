@@ -1,10 +1,37 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import Hero from "../../components/hero/Hero";
 
 const Drugs = () => {
   const [drugInfo, setDrugInfo] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const myDrug = async () => {
+      const options = {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "konviere-drugsapi.p.rapidapi.com",
+          "x-rapidapi-key":
+            "83ccb6233amshf2f2f5ae05304abp176ae2jsn5151f9b49a42",
+        },
+      };
+
+      try {
+        const res = await fetch(
+          "https://konviere-drugsapi.p.rapidapi.com/konviere/drugs/getDrugInfoByDrgNm/paracetamol",
+          options,
+        );
+
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        console.log(data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    myDrug();
+  }, []);
 
   const fetchDrugInfo = async (search) => {
     setLoading(true);
@@ -36,13 +63,6 @@ const Drugs = () => {
       setLoading(false);
     }
   };
-
-  //   const funFacts = [
-  //     "Aspirin was originally derived from willow tree bark!",
-  //     "Caffeine is the most widely consumed psychoactive substance in the world.",
-  //     "Penicillin was discovered by accident!",
-  //     "Morphine is named after Morpheus, the Greek god of dreams.",
-  //   ];
 
   return (
     <div className="flex flex-col items-center">
@@ -78,13 +98,6 @@ const Drugs = () => {
             </p>
           </div>
         )}
-
-        {/* <div className="mt-16 w-full max-w-2xl rounded bg-yellow-100 p-6 text-yellow-800 shadow dark:bg-yellow-900 dark:text-yellow-200">
-          <h3 className="mb-2 text-xl font-bold">💡 Did You Know?</h3>
-          <p className="text-md italic">
-            {funFacts[Math.floor(Math.random() * funFacts.length)]}
-          </p>
-        </div> */}
       </div>
     </div>
   );

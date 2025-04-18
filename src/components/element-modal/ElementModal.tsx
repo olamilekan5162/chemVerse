@@ -1,4 +1,4 @@
-import { Atom, Hash, Ruler, Zap, Calendar, Info, X } from "lucide-react";
+import { Atom, Hash, Ruler, Zap, Calendar, Info, X, Clock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 const ElementModal = ({ selectedElement, onModalClose }) => {
   return (
@@ -54,6 +54,12 @@ const ElementModal = ({ selectedElement, onModalClose }) => {
             <div className="flex items-center gap-2">
               <Info size={18} /> <strong>Standard State:</strong>{" "}
               {selectedElement.standardState}
+            </div>
+            <div className="flex gap-2 text-justify">
+              <div className="flex gap-2">
+                <Clock size={18} /> <strong>History:</strong>{" "}
+              </div>
+              {selectedElement.history}
             </div>
           </div>
         </motion.div>
