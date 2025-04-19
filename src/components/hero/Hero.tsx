@@ -20,9 +20,9 @@ const Hero = ({ onSearch, isDashboard }) => {
             <p className="text-4xl font-bold">
               Explore a universe of chemistry data
             </p>
-            <span className="text-xl">
-              — search for compounds, discover drugs, <br /> and visualize
-              atomic and molecular structures —
+            <span className="text-center text-xl">
+              — search for elements, compounds, <br /> and visualize atomic and
+              molecular structures —
             </span>
             <form
               onSubmit={handleSearch}
@@ -31,7 +31,7 @@ const Hero = ({ onSearch, isDashboard }) => {
               <input
                 className="w-full border-none bg-transparent outline-none"
                 type="text"
-                placeholder="Search for elements..."
+                placeholder="Search for elements, compounds..."
                 required
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}

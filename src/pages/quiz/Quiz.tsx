@@ -23,7 +23,7 @@ const Quiz = () => {
 
   return (
     <div className="bg-secondary dark:bg-primary mt-[100px] flex h-screen w-full flex-col items-center justify-center gap-[100px] p-4">
-      <h1 className="text-primary dark:text-secondary max-w-3xl text-[20px]">
+      <h1 className="text-primary dark:text-secondary max-w-3xl text-center text-[20px]">
         <i>
           Embark on a thrilling adventure through the{" "}
           <strong>Universe of Chemistry with ChemVerse!</strong> From atomic

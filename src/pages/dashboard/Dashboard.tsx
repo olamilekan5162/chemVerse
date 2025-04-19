@@ -115,7 +115,7 @@ const Dashboard = () => {
                 <strong>Description:</strong> {description || "N/A"}
               </p>
               <a
-                href={`https://pubchem.ncbi.nlm.nih.gov/compound/${compound.id}`}
+                href={`https://pubchem.ncbi.nlm.nih.gov/compound/${compound.CID}`}
                 target="_blank"
                 rel="noreferrer"
                 className="bg-primary dark:bg-secondary dark:text-primary mt-4 inline-block w-fit rounded px-4 py-2 text-white hover:opacity-80"
@@ -137,7 +137,7 @@ const Dashboard = () => {
       <div className="bg-secondary text-primary dark:bg-primary dark:text-secondary flex h-fit w-full justify-center py-12">
         <div className="flex flex-col items-center gap-4">
           <p className="text-4xl font-bold">Universe of Chemistry</p>
-          <span className="max-w-2xl text-xl">
+          <span className="max-w-2xl text-justify text-xl">
             ChemVerse is your all-in-one gateway to exploring the incredible
             world of chemistry. Whether you're a student, researcher, or curious
             mind, ChemVerse simplifies complex chemical data into an interactive

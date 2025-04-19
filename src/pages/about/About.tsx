@@ -15,11 +15,11 @@ const About = () => {
           <li>
             Search for Elements, Compounds and Drugs, use our intelligent search
             to look up any chemical element, compound, or drug using real-time
-            data from trusted public APIs like PubChem, DrugBank and RapidApi.
+            data from trusted public APIs like PubChem, OpenFda and RapidApi.
           </li>
           <li>
             Instantly view molecular images, IUPAC names, properties like
-            boiling/melting points, molecular weights, and more — beautifully
+            molecular formula, molecular weights, and more — beautifully
             displayed.
           </li>
           <li>
