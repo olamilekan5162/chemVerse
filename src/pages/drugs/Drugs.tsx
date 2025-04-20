@@ -35,11 +35,10 @@ const Drugs = () => {
       const ndcData = await ndcResponse.json();
 
       setDrugLabel(labelData.results[0]);
-      console.log(labelData.results[0]);
       setDrugNdc(ndcData.results[0]);
     } catch (err) {
       console.error("Error fetching drug data:", err);
-      setError(err.message);
+      setError("Drug not found");
     } finally {
       setLoading(false);
     }
@@ -52,7 +51,7 @@ const Drugs = () => {
       <div className="text-primary dark:text-secondary flex flex-col items-center justify-start p-4">
         {loading && (
           <div className="text-primary dark:text-secondary animate-pulse text-center text-xl">
-            Searchinig for Drug
+            Searching for Drug
           </div>
         )}
 
@@ -65,30 +64,33 @@ const Drugs = () => {
             <div className="flex flex-1 flex-col gap-4">
               <div className="mb-4 border-b border-gray-200 pb-2 dark:border-gray-700">
                 <h2 className="text-3xl font-bold capitalize">
-                  {drugLabel?.openfda.brand_name}
+                  {drugLabel.openfda.brand_name}
                 </h2>
                 <p className="text-primary dark:text-secondary mt-1 text-xl font-medium">
-                  {drugLabel?.openfda.generic_name || "Generic Name"}
+                  {drugLabel.openfda.generic_name || "Generic Name"}
                 </p>
               </div>
 
               <div className="flex flex-col gap-6">
-                <div className="bg-bg-color dark:bg-bg-color-dark rounded-lg p-4">
+                <div className="bg-bg-color dark:bg-bg-color-dark flex flex-col rounded-lg p-4">
                   <h3 className="text-primary dark:text-secondary mb-2 text-xl font-bold">
                     Clinical Information
                   </h3>
-                  <p className="mb-2">
-                    <strong>Purpose:</strong> {drugLabel.purpose || "N/A"}
-                  </p>
-                  <p className="mb-2">
-                    <strong>Indications:</strong>{" "}
-                    {drugLabel.indications_and_usage[0].slice(0, 500) +
-                      " ..." || "N/A"}
-                  </p>
-                  <p className="mb-2">
-                    <strong>Warning:</strong>{" "}
-                    {drugLabel.warnings[0].slice(0, 500) + " ..." || "N/A"}
-                  </p>
+                  <div className="grid grid-cols-3 gap-7 pr-5">
+                    <p className="text-justify">
+                      <strong>Purpose:</strong> <br />{" "}
+                      {drugLabel.purpose || "N/A"}
+                    </p>
+                    <p className="text-justify">
+                      <strong>Indications:</strong> <br />{" "}
+                      {drugLabel.indications_and_usage[0].slice(0, 500) +
+                        " ..." || "N/A"}
+                    </p>
+                    <p className="text-justify">
+                      <strong>Warning:</strong> <br />{" "}
+                      {drugLabel.warnings[0].slice(0, 500) + " ..." || "N/A"}
+                    </p>
+                  </div>
                 </div>
                 <div className="flex flex-row gap-5">
                   <div className="bg-bg-color dark:bg-bg-color-dark flex flex-1 flex-col rounded-lg p-4">
@@ -108,7 +110,7 @@ const Drugs = () => {
                       {drugNdc.dosage_form || "N/A"}
                     </p>
                     <p className="mb-2">
-                      <strong>Route:</strong> {drugNdc.route || "N/A"}
+                      <strong>Route:</strong> {drugNdc?.route || "N/A"}
                     </p>
                   </div>
 
