@@ -50,7 +50,7 @@ ChemVerse bridges the gap between scientific complexity and user accessibility, 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/chemverse.git
+git clone https://github.com/olamilekan5162/chemVerse.git
 cd chemverse
 ```
 
@@ -82,15 +82,15 @@ npm run dev
 
 ## Discord Handle
 
-[https://discordapp.com/users/oracle5163](@Oracle5163)
+- [https://discordapp.com/users/oracle5163](@Oracle5163)
 
 ## **GitHub Repository**
 
-[GitHub Repo](https://github.com/olamilekan5162/chemVerse)
+- [GitHub Repo](https://github.com/olamilekan5162/chemVerse)
 
 ## Live Url
 
-[ChemVerse Live](https://chem-verse.vercel.app/)
+- [ChemVerse Live](https://chem-verse.vercel.app/)
 
 ## License
 
