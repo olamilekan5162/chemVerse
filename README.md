@@ -53,7 +53,7 @@ ChemVerse bridges the gap between scientific complexity and user accessibility, 
 ## 📹 Demo Video
 
 🎥 **Watch ChemVerse in action**:  
-🔗 [Click to watch demo](https://drive.google.com/file/d/1HTizxvQEUxHi2rTgLLGgPTTvZldbtN_y/view?usp=drive_link)
+🔗 [Click to watch demo](https://drive.google.com/file/d/1Zh3awl-ax2JelMIaGBog_t2zcfkmS_BU/view?usp=sharing)
 
 ---
 
