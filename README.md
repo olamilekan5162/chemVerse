@@ -12,7 +12,7 @@ ChemVerse is a modern, interactive web application designed to simplify and gami
 
 ChemVerse integrates multiple public APIs like [PubChem PUG REST](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest), [OpenFDA](https://open.fda.gov/apis/) and [RapidApi](https://rapidapi.com/mukundKumar/api/periodictable) to deliver rich chemistry data and drug data. Users can:
 
-- Data is fetched in real-time from **PubChem** or **OpenFDA** depending on the type of query.
+- Compounds and Drugs Data are fetched in real-time from **PubChem** and **OpenFDA**.
 - For periodic table exploration, data is retrieved from **RapidAPI** with clickable UI elements.
 - Quiz questions are preloaded and randomized to offer a fresh experience on each visit.
 - React manages state changes efficiently, while Tailwind ensures smooth responsiveness and transitions.
@@ -64,20 +64,20 @@ ChemVerse bridges the gap between scientific complexity and user accessibility, 
 - A [RapidAPI](https://rapidapi.com/mukundKumar/api/periodictable) API key for the Periodic Table endpoint  
   _(No key is required for PubChem or OpenFDA)_
 
-## Installation
+### Installation
 
-### 1. Clone the Repository
+**1. Clone the Repository**
 
 ```bash
 git clone https://github.com/olamilekan5162/chemVerse.git
 cd chemverse
 ```
 
-### 2. Set up RapidApi key:
+**2. Set up RapidApi key:**
 
 Get an API key from [RapidApi](rapidapi.com)
 
-### 3. Set Up Environment Variables
+**3. Set Up Environment Variables**
 
 Create a .env file in the root directory and add your RapidAPI key:
 
@@ -85,13 +85,13 @@ Create a .env file in the root directory and add your RapidAPI key:
 VITE_X_RAPID_API_KEY=your_x_rapid_api_key
 ```
 
-### 4. Install Dependencies
+**4. Install Dependencies**
 
 ```bash
 npm install
 ```
 
-### 5. Start the development server
+**5. Start the development server**
 
 ```bash
 npm run dev
