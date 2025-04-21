@@ -34,7 +34,7 @@ ChemVerse bridges the gap between scientific complexity and user accessibility, 
 ## 📹 Demo Video
 
 🎥 **Watch ChemVerse in action**:  
-[🔗 Click to view demo](https://your-video-link.com)
+[🔗 Click to view demo](https://drive.google.com/file/d/1HTizxvQEUxHi2rTgLLGgPTTvZldbtN_y/view?usp=drive_link)
 
 ---
 
@@ -43,7 +43,9 @@ ChemVerse bridges the gap between scientific complexity and user accessibility, 
 ## Prerequisites
 
 - Node.js (v14 or higher)
-- npm or yarn
+- npm
+- A [RapidAPI](https://rapidapi.com/mukundKumar/api/periodictable) API key for the Periodic Table endpoint  
+  _(No key is required for PubChem or OpenFDA)_
 
 ## Installation
 
@@ -58,23 +60,33 @@ cd chemverse
 
 Get an API key from [RapidApi](rapidapi.com)
 
-### 3. Create an .env.local file in the root directory and add the following environment variables
+### 3. Environment Variables
+
+Create a .env file in the root directory and add your RapidAPI key:
 
 ```
 VITE_X_RAPID_API_KEY = your_x_rapid_api_key
 ```
 
-### Install Dependencies
+### 4. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Start the development server
+### 5. Start the development server
 
 ```bash
 npm run dev
 ```
+
+## 🧪 Built With
+
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [PubChem PUG REST](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest)
+- [OpenFDA](https://open.fda.gov/apis/)
+- [RapidAPI Periodic Table](https://rapidapi.com/mukundKumar/api/periodictable)
 
 ## 📌 Collaborators
 
