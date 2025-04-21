@@ -13,7 +13,7 @@ ChemVerse is a modern, interactive web application designed to simplify and gami
 ChemVerse integrates multiple public APIs like [PubChem PUG REST](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest), [OpenFDA](https://open.fda.gov/apis/) and [RapidApi](https://rapidapi.com/mukundKumar/api/periodictable) to deliver rich chemistry data and drug data. Users can:
 
 - Compounds and Drugs Data are fetched in real-time from **PubChem** and **OpenFDA**.
-- 3D molecular models are fetched in SDF (Structure Data File) format from PubChem and rendered using 3Dmol.js, supporting light and dark themes.
+- 3D molecular models are fetched in SDF (Structure Data File) format from PubChem and rendered using 3Dmol.js.
 - For periodic table exploration, data is retrieved from **RapidAPI** with clickable UI elements.
 - Quiz questions are preloaded and randomized to offer a fresh experience on each visit.
 - React manages state changes efficiently, while Tailwind ensures smooth responsiveness and transitions.
