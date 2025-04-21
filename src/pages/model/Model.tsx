@@ -28,11 +28,11 @@ const Model = () => {
       const element = viewerRef.current;
       element.innerHTML = "";
 
-      // const isDarkMode = document.documentElement.classList.contains("dark");
-      // const backgroundColor = isDarkMode ? "rgb(37, 37, 37)" : "white";
+      const isDarkMode = document.documentElement.classList.contains("dark");
+      const backgroundColor = isDarkMode ? "#1d293d" : "#f8fafc";
 
-      // const config = { backgroundColor };
-      const config = { backgroundColor: "ash" };
+      const config = { backgroundColor };
+      // const config = { backgroundColor: "#1d293d" };
       const viewer = $3Dmol.createViewer(element, config);
 
       viewer.addModel(moldelData, "sdf");
@@ -61,8 +61,8 @@ const Model = () => {
       )}
 
       <div className="bg-secondary dark:bg-primary mt-[80px] flex w-full flex-col items-center justify-center p-4">
-        <h1 className="text-primary dark:text-secondary mb-4 text-2xl font-extrabold">
-          {search.toUpperCase()} 3D MODEL
+        <h1 className="text-primary dark:text-secondary my-6 text-3xl font-bold">
+          {search.toUpperCase()} 3D MOLECULAR STRUCTURE
         </h1>
         <div
           ref={viewerRef}
