@@ -8,6 +8,7 @@ import Quiz from "./pages/quiz/Quiz.tsx";
 import PeriodicTable from "./pages/periodic-table/PeriodicTable.tsx";
 import Drugs from "./pages/drugs/Drugs.tsx";
 import About from "./pages/about/About.tsx";
+import Model from "./pages/model/model.tsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Dashboard />,
+      },
+      {
+        path: "model",
+        element: <Model />,
       },
       {
         path: "quiz",

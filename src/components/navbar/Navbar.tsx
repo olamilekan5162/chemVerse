@@ -19,7 +19,18 @@ const Navbar = () => {
               : "hover:text-primary-hover dark:hover:text-bg-color text-2xl font-normal"
           }
         >
-          Elements
+          Compounds
+        </NavLink>
+
+        <NavLink
+          to="model"
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-primary dark:border-b-secondary border-b-6 pb-2 text-2xl font-normal"
+              : "hover:text-primary-hover dark:hover:text-bg-color text-2xl font-normal"
+          }
+        >
+          3d Models
         </NavLink>
 
         <NavLink

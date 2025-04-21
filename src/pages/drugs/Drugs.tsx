@@ -46,7 +46,7 @@ const Drugs = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <Hero onSearch={fetchDrugInfo} isDashboard={false} />
+      <Hero onSearch={fetchDrugInfo} variation={"drug"} />
 
       <div className="text-primary dark:text-secondary flex flex-col items-center justify-start p-4">
         {loading && (

@@ -18,9 +18,9 @@ const About = () => {
             data from trusted public APIs like PubChem, OpenFda and RapidApi.
           </li>
           <li>
-            Instantly view molecular images, IUPAC names, properties like
-            molecular formula, molecular weights, and more — beautifully
-            displayed.
+            Instantly View 3D models of compounds, molecular images, IUPAC
+            names, properties like molecular formula, molecular weights, and
+            more — beautifully displayed.
           </li>
           <li>
             Explore the Periodic Table View a dynamic and clickable periodic

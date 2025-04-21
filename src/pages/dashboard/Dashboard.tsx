@@ -61,7 +61,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <Hero onSearch={fetchCompoundData} isDashboard={true} />
+      <Hero onSearch={fetchCompoundData} variation={"dashboard"} />
       <h1 className="text-primary dark:text-secondary mt-6 max-w-2xl text-center text-[18px]">
         <i>
           💡 Did you Know? <br /> {myFact}{" "}

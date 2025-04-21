@@ -13,6 +13,7 @@ ChemVerse is a modern, interactive web application designed to simplify and gami
 ChemVerse integrates multiple public APIs like [PubChem PUG REST](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest), [OpenFDA](https://open.fda.gov/apis/) and [RapidApi](https://rapidapi.com/mukundKumar/api/periodictable) to deliver rich chemistry data and drug data. Users can:
 
 - Compounds and Drugs Data are fetched in real-time from **PubChem** and **OpenFDA**.
+- 3D molecular models are fetched in SDF (Structure Data File) format from PubChem and rendered using 3Dmol.js, supporting light and dark themes.
 - For periodic table exploration, data is retrieved from **RapidAPI** with clickable UI elements.
 - Quiz questions are preloaded and randomized to offer a fresh experience on each visit.
 - React manages state changes efficiently, while Tailwind ensures smooth responsiveness and transitions.
@@ -27,6 +28,7 @@ This architecture allows ChemVerse to provide scientific accuracy with an intuit
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | 🔍 Compound Search            | Search by element or compound name to retrieve IUPAC name, molecular mass, structure, and other key properties using PubChem. |
 | 📘 Interactive Periodic Table | Explore all elements visually. Clicking on any element reveals detailed properties via RapidAPI.                              |
+| 🌐 3D Molecular Viewer        | View 3D models of compounds retrieved from PubChem SDF data, rendered in-browser using 3Dmol.js.                              |
 | 💊 Drug Information           | Fetch drug-related data including name, RxCUI, purpose, and usage from OpenFDA API.                                           |
 | 🧠 Chemistry Quiz             | Engage with chemistry through multiple-choice quizzes and explanations that make learning fun.                                |
 | 🎨 Responsive Design          | Clean and sleek UI built with React and Tailwind CSS that adapts to all screen sizes.                                         |
