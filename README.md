@@ -1,5 +1,9 @@
 # 🌐 ChemVerse || Universe of Chemistry
 
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
+![React](https://img.shields.io/badge/built%20with-React-61DAFB)
+![TailwindCSS](https://img.shields.io/badge/styled%20with-TailwindCSS-38B2AC)
+
 ChemVerse is a modern, interactive web application designed to simplify and gamify access to chemistry-related data. From exploring the periodic table to searching for compounds and drugs, ChemVerse leverages powerful public APIs to provide real-time, educational, and fun chemistry insights.
 
 ---
@@ -8,12 +12,12 @@ ChemVerse is a modern, interactive web application designed to simplify and gami
 
 ChemVerse integrates multiple public APIs like [PubChem PUG REST](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest), [OpenFDA](https://open.fda.gov/apis/) and [RapidApi](https://rapidapi.com/mukundKumar/api/periodictable) to deliver rich chemistry data and drug data. Users can:
 
-- 🔍 **Search for elements and compounds** by name and get details such as IUPAC name, molecular mass, molecular weight, structure etc.
+- 🔍 **Search for elements and compounds** by name and get details such as IUPAC name, molecular mass, molecular weight, structure and other properties.
 - 📘 **Explore the periodic table** visually, and click on any element to view its full properties.
 - 💊 **Discover drugs** using the OpenFDA database with RxCUI data, purpose, usage indications etc.
 - 🧠 **Test their knowledge** through interactive quizzes with multiple-choice questions and explanations, making learning chemistry engaging and insightful.
 
-The app is built with **React** and **Tailwind CSS**, ensuring a sleek, responsive, and smooth user experience.
+The app is built with **React** and **Tailwind CSS**, ChemVerse ensures a sleek, responsive, and smooth user experience.
 
 ---
 
@@ -34,13 +38,13 @@ ChemVerse bridges the gap between scientific complexity and user accessibility, 
 ## 📹 Demo Video
 
 🎥 **Watch ChemVerse in action**:  
-[🔗 Click to view demo](https://drive.google.com/file/d/1HTizxvQEUxHi2rTgLLGgPTTvZldbtN_y/view?usp=drive_link)
+[🔗 Click to watch demo](https://drive.google.com/file/d/1HTizxvQEUxHi2rTgLLGgPTTvZldbtN_y/view?usp=drive_link)
 
 ---
 
 ## 🛠️ Installation & Setup
 
-## Prerequisites
+### Prerequisites
 
 - Node.js (v14 or higher)
 - npm
@@ -60,7 +64,7 @@ cd chemverse
 
 Get an API key from [RapidApi](rapidapi.com)
 
-### 3. Environment Variables
+### 3. Set Up Environment Variables
 
 Create a .env file in the root directory and add your RapidAPI key:
 
@@ -82,28 +86,25 @@ npm run dev
 
 ## 🧪 Built With
 
-- [React](https://reactjs.org/)
+- [React](https://react.dev/)
+- [Flowbite React](https://flowbite-react.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [PubChem PUG REST](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest)
-- [OpenFDA](https://open.fda.gov/apis/)
+- [PubChem PUG REST API](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest)
+- [OpenFDA DRUG API](https://open.fda.gov/apis/)
 - [RapidAPI Periodic Table](https://rapidapi.com/mukundKumar/api/periodictable)
 
-## 📌 Collaborators
+## 🧑‍💻 Collaborators
 
 - [Opeyemi Olalekan](https://github.com/olamilekan5162)
 
-## Discord Handle
+## 🔗 Links
 
-- [https://discordapp.com/users/oracle5163](@Oracle5163)
+- 💻 Live Demo: [ChemVerse Live](https://chem-verse.vercel.app/)
 
-## **GitHub Repository**
+- 📁 [GitHub Repository](https://github.com/olamilekan5162/chemVerse)
 
-- [GitHub Repo](https://github.com/olamilekan5162/chemVerse)
+- 🗨️ Discord: [https://discordapp.com/users/oracle5163](@Oracle5163)
 
-## Live Url
-
-- [ChemVerse Live](https://chem-verse.vercel.app/)
-
-## License
+## 📄 License
 
 This project is licensed under MIT. See the [LICENSE](https://choosealicense.com/licenses/mit/) file for details.
