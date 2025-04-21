@@ -35,7 +35,7 @@ const Model = () => {
       <div className="bg-secondary dark:bg-primary mt-[80px] flex w-full flex-col items-center justify-center p-4">
         <div
           ref={viewerRef}
-          className="relative z-0 h-[500px] w-full max-w-[800px] overflow-hidden"
+          className="relative z-0 h-[700px] w-full max-w-[800px] overflow-hidden"
         />
       </div>
     </div>
