@@ -12,12 +12,25 @@ ChemVerse is a modern, interactive web application designed to simplify and gami
 
 ChemVerse integrates multiple public APIs like [PubChem PUG REST](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest), [OpenFDA](https://open.fda.gov/apis/) and [RapidApi](https://rapidapi.com/mukundKumar/api/periodictable) to deliver rich chemistry data and drug data. Users can:
 
-- 🔍 **Search for elements and compounds** by name and get details such as IUPAC name, molecular mass, molecular weight, structure and other properties.
-- 📘 **Explore the periodic table** visually, and click on any element to view its full properties.
-- 💊 **Discover drugs** using the OpenFDA database with RxCUI data, purpose, usage indications etc.
-- 🧠 **Test their knowledge** through interactive quizzes with multiple-choice questions and explanations, making learning chemistry engaging and insightful.
+- Data is fetched in real-time from **PubChem** or **OpenFDA** depending on the type of query.
+- For periodic table exploration, data is retrieved from **RapidAPI** with clickable UI elements.
+- Quiz questions are preloaded and randomized to offer a fresh experience on each visit.
+- React manages state changes efficiently, while Tailwind ensures smooth responsiveness and transitions.
 
-The app is built with **React** and **Tailwind CSS**, ChemVerse ensures a sleek, responsive, and smooth user experience.
+This architecture allows ChemVerse to provide scientific accuracy with an intuitive UI, making it ideal for education, exploration, and quick reference.
+
+---
+
+## ✨ Features
+
+| Feature                       | Description                                                                                                                   |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 🔍 Compound Search            | Search by element or compound name to retrieve IUPAC name, molecular mass, structure, and other key properties using PubChem. |
+| 📘 Interactive Periodic Table | Explore all elements visually. Clicking on any element reveals detailed properties via RapidAPI.                              |
+| 💊 Drug Information           | Fetch drug-related data including name, RxCUI, purpose, and usage from OpenFDA API.                                           |
+| 🧠 Chemistry Quiz             | Engage with chemistry through multiple-choice quizzes and explanations that make learning fun.                                |
+| 🎨 Responsive Design          | Clean and sleek UI built with React and Tailwind CSS that adapts to all screen sizes.                                         |
+| ⚙️ Real-Time Data             | All data is retrieved in real-time from trusted open data APIs for accuracy and reliability.                                  |
 
 ---
 
@@ -38,7 +51,7 @@ ChemVerse bridges the gap between scientific complexity and user accessibility, 
 ## 📹 Demo Video
 
 🎥 **Watch ChemVerse in action**:  
-[🔗 Click to watch demo](https://drive.google.com/file/d/1HTizxvQEUxHi2rTgLLGgPTTvZldbtN_y/view?usp=drive_link)
+🔗 [Click to watch demo](https://drive.google.com/file/d/1HTizxvQEUxHi2rTgLLGgPTTvZldbtN_y/view?usp=drive_link)
 
 ---
 
@@ -69,7 +82,7 @@ Get an API key from [RapidApi](rapidapi.com)
 Create a .env file in the root directory and add your RapidAPI key:
 
 ```
-VITE_X_RAPID_API_KEY = your_x_rapid_api_key
+VITE_X_RAPID_API_KEY=your_x_rapid_api_key
 ```
 
 ### 4. Install Dependencies
@@ -86,12 +99,12 @@ npm run dev
 
 ## 🧪 Built With
 
-- [React](https://react.dev/)
-- [Flowbite React](https://flowbite-react.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [PubChem PUG REST API](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest)
-- [OpenFDA DRUG API](https://open.fda.gov/apis/)
-- [RapidAPI Periodic Table](https://rapidapi.com/mukundKumar/api/periodictable)
+- [React](https://react.dev/) – Frontend framework
+- [Flowbite React](https://flowbite-react.com/) – UI components
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first styling
+- [PubChem PUG REST API](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest) – Chemical compound data
+- [OpenFDA DRUG API](https://open.fda.gov/apis/) – Drug and pharmaceutical data
+- [RapidAPI Periodic Table](https://rapidapi.com/mukundKumar/api/periodictable) – Periodic table data
 
 ## 🧑‍💻 Collaborators
 
@@ -103,8 +116,8 @@ npm run dev
 
 - 📁 [GitHub Repository](https://github.com/olamilekan5162/chemVerse)
 
-- 🗨️ Discord: [https://discordapp.com/users/oracle5163](@Oracle5163)
+- 🗨️ Discord: [@Oracle5163](https://discordapp.com/users/oracle5163)
 
 ## 📄 License
 
-This project is licensed under MIT. See the [LICENSE](https://choosealicense.com/licenses/mit/) file for details.
+This project is licensed under **MIT LICENSE**. See the [LICENSE](https://choosealicense.com/licenses/mit/) file for details.
