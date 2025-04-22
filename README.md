@@ -116,7 +116,7 @@ npm run dev
 
 - 💻 Live Demo: [ChemVerse Live](https://chem-verse.vercel.app/)
 
-- 📁 [GitHub Repository](https://github.com/olamilekan5162/chemVerse)
+- 📁 Source files: Available in the [GitHub Repository](https://github.com/olamilekan5162/chemVerse)
 
 - 🗨️ Discord: [@Oracle5163](https://discordapp.com/users/oracle5163)
 
